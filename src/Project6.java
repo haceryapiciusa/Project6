@@ -35,13 +35,11 @@ public static void main(String[] args) throws InterruptedException {
     WebElement click3 = driver.findElement(By.id("tool-2"));
     click3.click();
     WebElement select=driver.findElement(By.id("continents"));
-    Select dropdown=new Select(select);
 
-    List<WebElement>options=dropdown.getOptions();
-    for(WebElement element:options){
-        if(element.getText().equals("North America"))
-            dropdown.selectByVisibleText("North America");
-    }
+
+    WebElement select2 = driver.findElement(By.name("continents"));
+    Select dropdown = new Select(select2);
+    dropdown.selectByIndex(5);
 
     Select dropdown1 = new Select(driver.findElement(By.id("selenium_commands")));
     List<WebElement> commands = dropdown1.getOptions();
